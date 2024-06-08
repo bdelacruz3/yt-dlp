@@ -1,0 +1,15 @@
+import yt_dlp
+
+# Define your YouTube URL
+url = 'https://www.youtube.com/watch?v=GL5D7zhaDj4'
+
+# Options for yt-dlp
+ydl_opts = {
+    'cookies': 'path/to/your/cookies.txt',  # Path to your cookies file
+    'outtmpl': '%(title)s.%(ext)s',         # Output file template
+    'format': 'best',                       # Best quality format
+}
+
+# Download the video
+with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+    ydl.download([url])
